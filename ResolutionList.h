@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include "LinkedList.h"
 #include "Resolution.h"
 #include "ResolutionList.cpp"
