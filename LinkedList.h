@@ -1,7 +1,10 @@
 #pragma once
-#include "Node.cpp"
-#include "LinkedList.cpp"
-
+template <class type> //this template should be able to hold different types of data
+struct Node
+{
+    type data;
+    Node<type> * next;
+};
 template <class type>
 class LinkedList
 {
