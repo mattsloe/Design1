@@ -1,27 +1,34 @@
 //#include "Node.cpp"
 #include "LinkedList.h"
-/*Defining a Node template for LinkedList*/
-
 
 
 template<class type> LinkedList<type>::LinkedList()
 {
-
+   head = NULL;
+   size = 0;
 }
 
 template<class type> LinkedList<type>::LinkedList(const LinkedList<type>& list)
 {
-
+   //Deep-copy List pointed to by head
+   size = list.size;
 }
 
 template<class type> LinkedList<type>::~LinkedList()
 {
-
+   //Delete and deallocate the Linked List
+   Node<type> * temp = NULL;
+   while( head!= NULL ){
+      temp = head->next;
+      delete head;
+      head = temp;
+   }
 }
 
 template<class type> int LinkedList<type>::isEmpty() const
 {
-
+  if(size == 0) return true;
+  else return false;
 }
 
 template<class type> int LinkedList<type>::isEmpty() const
