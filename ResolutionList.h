@@ -17,6 +17,7 @@ class ResolutionList : private LinkedList<Resolution>
 
     int display() const;
     int display(int index) const;    
+
     
     //
     private:

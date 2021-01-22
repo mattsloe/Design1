@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include "LinkedList.h"
 #include "Resolution.cpp"
 
@@ -27,6 +28,8 @@ class Resolution : private LinkedList<Task>
     //Displays the title and the associated tasks with the Resolution
     int display() const;
 
+    //Overload << operator to display
+    friend std::ostream &operator<<( std::ostream &output, const Resolution &toDisplay);
 
     private:
     //Member data and functions
