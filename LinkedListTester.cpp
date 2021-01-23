@@ -5,29 +5,31 @@ using namespace std;
 int main(){
 
     //Create a LinkedList
-    LinkedList<int> myList;
+    LinkedList<string> myList;
 
     //Create a string with test info
-    int testInt= 99;
+    string testString= "Fuck";
 
     //add string to LinkedList
-    myList.insert(testInt, 0);
+    myList.insert(testString, 0);
     //Display List
     myList.display();
     //add another string to LinkedList
-
+    myList.insert("Test",0);
     //Display List
-
+    myList.display();
     //add another string to LinkedList IN BETWEEN the first two entries
-
+    myList.insert("Fart",1);
     //Display List
-
+    myList.display();
     //Display List Length
-
+    cout << "Length: " << myList.listLength() << '\n';
     //Remove a member of the list & display
-
+    myList.remove(3);
+    myList.display();
     //Create new LinkedList using copy constructor
-
+    LinkedList<string> copyList = myList;
+    myList.display();
     //delete list
 
     //END

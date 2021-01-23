@@ -173,7 +173,7 @@ template<class type> Node<type>* LinkedList<type>::getNodeAt(int index) const
 
 template<class type> bool LinkedList<type>::indexInBounds(int index) const
 {
-   return (index >= 0 && index <= size);
+   return (index >= 0 && index < size);
 }
 
 template<class type> int LinkedList<type>::displayRecursively(Node<type>* currentPointer) const
@@ -181,7 +181,7 @@ template<class type> int LinkedList<type>::displayRecursively(Node<type>* curren
    //base case: currentPointer is null
    if(currentPointer != NULL){
       //display the entry at the current pointer
-      std::cout << currentPointer->data;
+      std::cout << *(currentPointer->data) << '\n';
       //recursively call the function if not at the end of the list
       return displayRecursively(currentPointer->next);
    }else{
