@@ -3,7 +3,16 @@
 using namespace std;
 
 int main(){
+    //dynamically allocate LinkedList
+    LinkedList<string>* listPtr = new LinkedList<string>();
+    listPtr->insert("Test",0);
+    listPtr->insert("A",0);
+    listPtr->insert("This is",0);
+    listPtr->display();
+    delete(listPtr);
 
+
+    /*
     //Create a LinkedList
     LinkedList<string> myList;
 
@@ -31,7 +40,8 @@ int main(){
     LinkedList<string> copyList = myList;
     myList.display();
     //delete list
-
+    delete (copyList);
+    */
     //END
     cout << "End of the program!\n"; 
     return 0;

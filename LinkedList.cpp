@@ -22,13 +22,13 @@ template<class type> LinkedList<type>::LinkedList(const LinkedList<type>& list)
    }else{
       //copy first node
       head = new Node<type>; 
-      head->data = new type(oldListPtr->data); //use 'type's copy constructor
+      head->data = new type(*(oldListPtr->data)); //use 'type's copy constructor
 
       //Copy the rest
       Node<type>* newListPtr = head;
-      while(oldListPtr != NULL){
+      while(oldListPtr->next != NULL){
          oldListPtr = oldListPtr->next; //iterate pointer on old list
-         type nextItem = new type(oldListPtr->data); //use copy constructor to get next item
+         type * nextItem = new type(*(oldListPtr->data)); //use copy constructor to get next item
 
          //create a new node containing the nextItem
          Node<type>* newNodePtr = new Node<type>;
@@ -119,7 +119,7 @@ template<class type> int LinkedList<type>::display() const
 template<class type> int LinkedList<type>::clear()
 {
    while(!isEmpty()){
-      remove(1);
+      remove(0);
    }
    return 1; //no error handling
 } 
